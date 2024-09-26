@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background2"
+            android:padding="10dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="450dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/rounded_panel"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.4">
+
+                        <TextView
+                            android:id="@+id/addManu"
+                            style="@style/title_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Add Expense"
+                            android:textSize="20dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="80dp"
+                            android:hint="Vendor Name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/NameIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outAmountManually"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="250dp"
+                            android:hint="Amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/amountIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outDate1"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="160dp"
+                            android:background="@color/white"
+                            android:hint="dd/mm/yyyy"
+                            android:onClick="clickDataPicker"
+                            app:endIconDrawable="@drawable/ic_baseline_calendar_today_24"
+                            app:endIconMode="custom">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/dateIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="date" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="340dp"
+                            android:text="Category" />
+
+                        <Spinner
+                            android:id="@+id/spinnerCat"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="380dp"
+                            android:background="@drawable/spinn"
+                            android:entries="@array/Category"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/saveExpense"
+                        style="@style/light_button_style"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:onClick="SaveExpense"
+                        android:text="Save"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <include layout="@layout/navigtion_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

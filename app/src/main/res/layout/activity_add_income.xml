@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background2"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/rounded_panel"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.37">
+
+
+                    <TextView
+                        android:id="@+id/addincome"
+                        style="@style/title_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="25dp"
+                        android:text="Add Income" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/outName"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="120dp"
+                        android:layout_marginEnd="30dp"
+                        android:hint="Name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameIncome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/outDate"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="210dp"
+                        android:layout_marginEnd="30dp"
+                        android:hint="dd/mm/yyyy"
+                        android:onClick="clickDataPicker"
+                        app:endIconDrawable="@drawable/ic_baseline_calendar_today_24"
+                        app:endIconMode="custom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dateIncome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="date" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/outAmount"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="300dp"
+                        android:layout_marginEnd="30dp"
+                        android:hint="Amount">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/amountIncome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/saveIncome"
+                    style="@style/light_button_style"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Save"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <include layout="@layout/navigtion_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/main_layout_2_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background2"
+            android:paddingBottom="0dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/invitationRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/invitation_list_item"/>
+
+            <TextView
+                android:id="@+id/noData_Invitation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Data Found"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/invitationRecyclerView"
+                app:layout_constraintStart_toStartOf="@+id/invitationRecyclerView"
+                app:layout_constraintTop_toTopOf="@+id/invitationRecyclerView"
+                app:layout_constraintVertical_bias="0.371" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/navigtion_drawer" />
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/main_layout_2_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:elevation="20dp"
+                android:shadowColor="#12531111"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.522"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.137"
+                tools:text="1,893.45" />
+
+            <Button
+                android:id="@+id/saveIncome"
+                android:layout_width="110dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/purpleborder"
+                android:elevation="50dp"
+                android:shadowColor="#12531111"
+                android:text="Save"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintVertical_bias="0.029" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:elevation="20dp"
+                android:shadowColor="#12531111"
+                android:text="Monthly Income"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monthlyIncomeBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:hint=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/monthlyIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/SavingRateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:elevation="20dp"
+                android:shadowColor="#12531111"
+                android:text="Saving Rate"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="122dp"
+                android:layout_marginTop="110dp"
+                android:elevation="20dp"
+                android:shadowColor="#12531111"
+                android:text="%"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SavingAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="90dp"
+                android:hint="Recommended %15.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/savingRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal" />
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="JD"
+                android:textColor="@color/Black"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.42"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.138" />
+
+            <TextView
+                android:id="@+id/SavingWalletLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                android:shadowColor="#12531111"
+                android:text="Saving Wallet"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <include layout="@layout/navigtion_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
